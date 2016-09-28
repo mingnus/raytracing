@@ -50,7 +50,8 @@ int main()
     /* do the ray tracing with the given geometry */
     clock_gettime(CLOCK_REALTIME, &start);
     raytracing(pixels, background,
-               rectangulars, spheres, lights, &view, ROWS, COLS);
+               rectangulars, spheres, lights, &view, ROWS, COLS,
+               0, 0, COLS - 1, ROWS - 1);
     clock_gettime(CLOCK_REALTIME, &end);
     {
         FILE *outfile = fopen(OUT_FILENAME, "wb");
