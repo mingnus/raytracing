@@ -6,7 +6,7 @@ CC ?= gcc
 CFLAGS = \
 	-std=gnu99 -Wall -O0 -g
 LDFLAGS = \
-	-lm
+	-lm -pthread
 
 ifeq ($(strip $(PROFILE)),1)
 PROF_FLAGS = -pg
@@ -15,6 +15,7 @@ LDFLAGS += $(PROF_FLAGS)
 endif
 
 OBJS := \
+        barrier.o \
 	objects.o \
 	raytracing.o \
 	main.o
